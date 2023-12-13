@@ -139,6 +139,19 @@ class TimerHomePage extends StatelessWidget {
                   ),
                 ],
               ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Text('Dibuat oleh Lailatuz Zuhria, NIM : 21201147'),
+                      ),
+                      ),
+                    ),
+                ],
+              ),
             ],
           ),
         );

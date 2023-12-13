@@ -66,80 +66,88 @@ class _SettingsState extends State<Settings> {
 
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      childAspectRatio: 3,
-      scrollDirection: Axis.vertical,
-      crossAxisSpacing: 10,
-      mainAxisSpacing: 10,
-      padding: const EdgeInsets.all(20),
-      children: <Widget>[
-        Text('Kerja'),
-        Text(''),
-        Text(''),
-        MaterialButton(
-          color: Color(0xff455A64),
-          onPressed: () => updateSettings(WORKTIME, -1),
-          child: Text(
-            '-',
-            style: TextStyle(color: Colors.white),
+    return Column(
+      children: [
+        Container(
+          height: 500,
+          child: GridView.count(
+            crossAxisCount: 3,
+            childAspectRatio: 3,
+            scrollDirection: Axis.vertical,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 10,
+            padding: const EdgeInsets.all(5.0),
+            children: <Widget>[
+              Text('Work'),
+              Text(''),
+              Text(''),
+              MaterialButton(
+                color: Color(0xff455A64),
+                onPressed: () => updateSettings(WORKTIME, -1),
+                child: Text(
+                  '-',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextField(
+                controller: txtWork,
+              ),
+              MaterialButton(
+                color: Color(0xff009688),
+                onPressed: () => updateSettings(WORKTIME, 1),
+                child: Text(
+                  '+',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              Text('Short Break'),
+              Text(''),
+              Text(''),
+              MaterialButton(
+                color: Color(0xff455A64),
+                onPressed: () => updateSettings(SHORTBREAK, -1),
+                child: Text(
+                  '-',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextField(
+                controller: txtShort,
+              ),
+              MaterialButton(
+                color: Color(0xff009688),
+                onPressed: () => updateSettings(SHORTBREAK, 1),
+                child: Text(
+                  '+',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              Text('Long Break'),
+              Text(''),
+              Text(''),
+              MaterialButton(
+                color: Color(0xff455A64),
+                onPressed: () => updateSettings(LONGBREAK, -1),
+                child: Text(
+                  '-',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextField(
+                controller: txtLong,
+              ),
+              MaterialButton(
+                color: Color(0xff009688),
+                onPressed: () => updateSettings(LONGBREAK, 1),
+                child: Text(
+                  '+',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ],
           ),
         ),
-        TextField(
-          controller: txtWork,
-        ),
-        MaterialButton(
-          color: Color(0xff009688),
-          onPressed: () => updateSettings(WORKTIME, 1),
-          child: Text(
-            '+',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        Text('Short Break'),
-        Text(''),
-        Text(''),
-        MaterialButton(
-          color: Color(0xff455A64),
-          onPressed: () => updateSettings(SHORTBREAK, -1),
-          child: Text(
-            '-',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        TextField(
-          controller: txtShort,
-        ),
-        MaterialButton(
-          color: Color(0xff009688),
-          onPressed: () => updateSettings(SHORTBREAK, 1),
-          child: Text(
-            '+',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        Text('Long Break'),
-        Text(''),
-        Text(''),
-        MaterialButton(
-          color: Color(0xff455A64),
-          onPressed: () => updateSettings(LONGBREAK, -1),
-          child: Text(
-            '-',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
-        TextField(
-          controller: txtLong,
-        ),
-        MaterialButton(
-          color: Color(0xff009688),
-          onPressed: () => updateSettings(LONGBREAK, 1),
-          child: Text(
-            '+',
-            style: TextStyle(color: Colors.white),
-          ),
-        ),
+        Text('Dibuat oleh Lailatuz Zuhria, NIM : 21201147'),
       ],
     );
   }
